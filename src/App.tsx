@@ -91,113 +91,114 @@ function App() {
         </p>
       </header>
       <main>
-        <div className="container">
-          <div className="mt-5">
-            <div className="field is-horizontal">
-              <div className="field-label is-normal" style={{ flexGrow: 5 }}>
-                <label className="label">特攻カード枚数</label>
+        <div>
+          <div className="content">
+            <div className="mt-5">
+              <div className="field is-horizontal">
+                <div className="field-label is-normal" style={{ flexGrow: 5 }}>
+                  <label className="label">特攻カード枚数</label>
+                </div>
+                <div className="field-body"></div>
               </div>
-              <div className="field-body"></div>
+              <SelectBox
+                name="star3"
+                label="星3"
+                items={star3cardItems}
+                unit="枚"
+                control={control}
+              />
+              {errors.star3 && (
+                <Error error={errors.star3.message ?? ''} />
+              )}
+              <SelectBox
+                name="star4"
+                label="星4"
+                items={star4cardItems}
+                unit="枚"
+                control={control}
+              />
+              {errors.star4 && (
+                <Error error={errors.star4.message ?? ''} />
+              )}
+              <SelectBox
+                name="star5"
+                label="星5"
+                items={star5cardItems}
+                unit="枚"
+                control={control}
+              />
+              {errors.star5 && (
+                <Error error={errors.star5.message ?? ''} />
+              )}
             </div>
-            <SelectBox
-              name="star3"
-              label="星3"
-              items={star3cardItems}
-              unit="枚"
-              control={control}
-            />
-            {errors.star3 && (
-              <Error error={errors.star3.message ?? ''} />
-            )}
-            <SelectBox
-              name="star4"
-              label="星4"
-              items={star4cardItems}
-              unit="枚"
-              control={control}
-            />
-            {errors.star4 && (
-              <Error error={errors.star4.message ?? ''} />
-            )}
-            <SelectBox
-              name="star5"
-              label="星5"
-              items={star5cardItems}
-              unit="枚"
-              control={control}
-            />
-            {errors.star5 && (
-              <Error error={errors.star5.message ?? ''} />
-            )}
-          </div>
 
-          <div className="mt-5">
-            <SelectBox
-              name="goal"
-              label="目標枚数"
-              items={goalCard}
-              unit="枚"
-              control={control}
-            />
-            {errors.goal && (
-              <Error error={errors.goal.message ?? ''} />
-            )}
-          </div>
+            <div className="mt-5">
+              <SelectBox
+                name="goal"
+                label="目標枚数"
+                items={goalCard}
+                unit="枚"
+                control={control}
+              />
+              {errors.goal && (
+                <Error error={errors.goal.message ?? ''} />
+              )}
+            </div>
 
-          <div className="mt-5">
-            <InputNumber
-              name="liveScore"
-              label="通常ライブSCORE"
-              min={0} unit="万pt"
-              control={control} />
-            {errors.liveScore && (
-              <Error error={errors.liveScore.message ?? ''} />
-            )}
-          </div>
+            <div className="mt-5">
+              <InputNumber
+                name="liveScore"
+                label="通常ライブSCORE"
+                min={0} unit="万pt"
+                control={control} />
+              {errors.liveScore && (
+                <Error error={errors.liveScore.message ?? ''} />
+              )}
+            </div>
 
-          <div className="mt-5">
-            <InputNumber
-              name="eventLiveScore"
-              label="イベントライブSCORE"
-              min={0}
-              unit="万pt"
-              control={control} />
-            {errors.eventLiveScore && (
-              <Error error={errors.eventLiveScore.message ?? ''} />
-            )}
-          </div>
+            <div className="mt-5">
+              <InputNumber
+                name="eventLiveScore"
+                label="イベントライブSCORE"
+                min={0}
+                unit="万pt"
+                control={control} />
+              {errors.eventLiveScore && (
+                <Error error={errors.eventLiveScore.message ?? ''} />
+              )}
+            </div>
 
-          <div className="mt-5">
-            <SelectBox
-              name="bpPerPlay"
-              label="1play毎の消費BP"
-              items={useBp}
-              control={control}
-            />
-            {errors.bpPerPlay && (
-              <Error error={errors.bpPerPlay.message ?? ''} />
-            )}
-          </div>
+            <div className="mt-5">
+              <SelectBox
+                name="bpPerPlay"
+                label="1play毎の消費BP"
+                items={useBp}
+                control={control}
+              />
+              {errors.bpPerPlay && (
+                <Error error={errors.bpPerPlay.message ?? ''} />
+              )}
+            </div>
 
-          <LabelText label="必要ライブ回数" value={requiredPlay ?? 0} unit="回" />
-          <LabelText label="必要ダイヤ数" value={requiredStone ?? 0} unit="個" />
-          <div className="mt-5">
-            <div className="field is-horizontal">
-              <div className="field-label is-normal" style={{ flexGrow: 5 }}>
-                <label className="label">必要プレイ時間</label>
-              </div>
-              <div className="field-body">
-                <div className="field" style={{ paddingTop: ".375rem" }}>
-                  <span>{requiredTime.hour ?? 0} 時間 {requiredTime.min} 分</span>
+            <LabelText label="必要ライブ回数" value={requiredPlay ?? 0} unit="回" />
+            <LabelText label="必要ダイヤ数" value={requiredStone ?? 0} unit="個" />
+            <div className="mt-5">
+              <div className="field is-horizontal">
+                <div className="field-label is-normal" style={{ flexGrow: 5 }}>
+                  <label className="label">必要プレイ時間</label>
+                </div>
+                <div className="field-body">
+                  <div className="field" style={{ paddingTop: ".375rem" }}>
+                    <span>{requiredTime.hour ?? 0} 時間 {requiredTime.min} 分</span>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
+          </div>
           <div
             className="m-5"
-            style={{ display: "flex", justifyContent: "flex-end" }}
-          >
+            style={{ display: "flex", justifyContent: "flex-end" }}>
             <div>
               <a
                 className="Twitter-link"
