@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "452cf72d7e007052a89a4943973a203d",
+    "revision": "4ed4be0c614fe98a62f0b6eac3329c46",
     "url": "/eventpoint-calculation/index.html"
   },
   {
-    "revision": "280c5b8e0e15aa99705e",
+    "revision": "0b0ecef3087678780e3c",
     "url": "/eventpoint-calculation/static/css/main.76a5ceb6.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/eventpoint-calculation/static/js/2.a08baf51.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "280c5b8e0e15aa99705e",
-    "url": "/eventpoint-calculation/static/js/main.2121c1f0.chunk.js"
+    "revision": "0b0ecef3087678780e3c",
+    "url": "/eventpoint-calculation/static/js/main.d430e900.chunk.js"
   },
   {
     "revision": "4b22c53e17536975c08d",
