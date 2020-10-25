@@ -80,7 +80,8 @@ function App() {
     return { hour, min };
   }, [requiredPlay]);
   const requiredStone = React.useMemo(() => {
-    return (requiredBp - 472) * 2;
+    const stone = (requiredBp - 472) * 2;
+    return stone > 0 ? stone : 0;
   }, [requiredBp]);
   return (
     <div className="App">
