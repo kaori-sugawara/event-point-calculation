@@ -24,7 +24,8 @@
     "build": "react-scripts build",
     "dev": "react-scripts build & react-scripts start",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -40,6 +41,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ],
-    "homepage": "http://eventpoint-calculation.github.io/ensemble"
+    "homepage": "https://kaori-sugawara.github.io/eventpoint-calculation"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.1.0"
   }
 }
